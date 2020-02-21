@@ -2,16 +2,13 @@ import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
-// @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 
 import productStyle from "assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx";
+import SvgIcon from "@material-ui/icons/Chat";
 
 class ProductSection extends React.Component {
   render() {
@@ -20,43 +17,38 @@ class ProductSection extends React.Component {
       <div className={classes.section}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Let's talk product</h2>
-            <h5 className={classes.description}>
-              This is the paragraph where you can write more details about your
-              product. Keep you user engaged by providing meaningful
-              information. Remember that by this time, the user is curious,
-              otherwise he wouldn't scroll to get here. Add a button if you want
-              the user to see more.
-            </h5>
+            <h2 className={classes.title}>A nossa comunidade é um lugar seguro para TODOS</h2>
           </GridItem>
         </GridContainer>
         <div>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={4}>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={3}>
               <InfoArea
-                title="Free Chat"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={Chat}
+                title="Diversidade e inclusão"
+                description="Nós adotamos a política de tolerância zero para assédio, perseguições ou discriminações e respeitamos os limites e identidade das pessoas."
+                icon={() => <img src={require("assets/img/chat.png")} />}
                 iconColor="info"
-                vertical
+                horizontal
               />
             </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={3}>
               <InfoArea
-                title="Verified Users"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={VerifiedUser}
+                title="Segurança"
+                description="Cultivamos uma rede de suporte e encorajamento para todos e suas variadas formas de expressão de maneira responsável."
+                icon={() => <img src={require("assets/img/conversation.png")} />}
                 iconColor="success"
-                vertical
+                horizontal
               />
             </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={3}>
               <InfoArea
-                title="Fingerprint"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={Fingerprint}
+                title="Boa conduta"
+                description={<span>Prezamos pelo bom senso e pela boa conduta, por isso temos um
+                  código de conduta que deve ser seguido a risca sob pena de expulsão da comunidade.
+                  Veja <a href="https://github.com/androiddevbr/codigo-de-conduta">aqui</a></span>}
+                icon={() => <img src={require("assets/img/law.png")} />}
                 iconColor="danger"
-                vertical
+                horizontal
               />
             </GridItem>
           </GridContainer>
