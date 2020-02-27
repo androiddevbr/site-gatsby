@@ -24,6 +24,7 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
+import InitiativesSection from "./Sections/InitiativesSection.jsx";
 
 const dashboardRoutes = [];
 
@@ -35,7 +36,7 @@ class LandingPage extends React.Component {
         <Header
           color="transparent"
           routes={dashboardRoutes}
-          brand={<div><img src="https://github.com/androiddevbr/assets/blob/master/exports/logo_circle_1000x1000.png?raw=true" width={20} alt="Logo Android DEV BR" style={{ marginRight: 10, marginTop: 4, verticalAlign: "top"}} />ANDROID DEV BR</div>}
+          brand={<div><img src="https://github.com/androiddevbr/assets/blob/master/exports/logo_circle_1000x1000.png?raw=true" width={20} alt="Logo Android DEV BR" style={{ marginRight: 10, marginTop: 4, verticalAlign: "top" }} />ANDROID DEV BR</div>}
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -70,10 +71,10 @@ class LandingPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <TeamSection />
-            {/* <WorkSection /> */}
+            <ProductSection />
           </div>
         </div>
-        <ProductSection />
+        <InitiativesSection />
         <Footer />
       </div>
     );

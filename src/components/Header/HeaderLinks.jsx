@@ -9,9 +9,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
-
 // React icons
 import { FaTwitter, FaFacebook, FaMedium, FaPodcast, FaSlack } from 'react-icons/fa';
 
@@ -27,25 +24,25 @@ function HeaderLinks({ ...props }) {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
-          href="#"
+          href="#about"
           color="transparent"
           className={classes.navLink}
         >Quem Somos</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="#"
+          href="#initiatives"
           color="transparent"
           className={classes.navLink}
         >Iniciativas</Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Button
           href="#"
           color="transparent"
           className={classes.navLink}
         >Contato</Button>
-      </ListItem>
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-slack"
@@ -66,7 +63,7 @@ function HeaderLinks({ ...props }) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
-          title="Siga no Twitter"
+          title="Seguir no Twitter"
           placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -83,7 +80,7 @@ function HeaderLinks({ ...props }) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
-          title="Siga no facebook"
+          title="Seguir no facebook"
           placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
@@ -100,7 +97,7 @@ function HeaderLinks({ ...props }) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-medium"
-          title="Veja o Medium"
+          title="Ver Medium"
           placement={typeof window !== 'undefined' && window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >

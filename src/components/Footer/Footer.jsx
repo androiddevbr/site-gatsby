@@ -6,10 +6,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { List, ListItem, withStyles } from "@material-ui/core";
 
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-
 import footerStyle from "assets/jss/material-kit-react/components/footerStyle.jsx";
+import { FaGithub, FaFacebook, FaTwitterSquare, FaYoutube, FaMedium, FaPodcast } from "react-icons/fa";
 
 function Footer({ ...props }) {
   const { classes, whiteFont } = props;
@@ -28,45 +26,70 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/"
+                href="https://github.com/androiddevbr"
                 className={classes.block}
                 target="_blank"
               >
-                Creative Tim
+                <FaGithub/>
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/presentation"
+                href="https://www.facebook.com/AndroidDevBrOrg"
                 className={classes.block}
                 target="_blank"
               >
-                About us
+                <FaFacebook/>
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="http://blog.creative-tim.com/"
+                href="https://twitter.com/AndroidDevBrOrg"
                 className={classes.block}
                 target="_blank"
               >
-                Blog
+                <FaTwitterSquare/>
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/license"
+                href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA"
                 className={classes.block}
                 target="_blank"
               >
-                Licenses
+                <FaYoutube/>
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a
+                href="https://medium.com/android-dev-br"
+                className={classes.block}
+                target="_blank"
+              >
+                <FaMedium/>
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a
+                href="https://pod.link/1387735341"
+                className={classes.block}
+                target="_blank"
+              >
+                <FaPodcast/>
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a
+                href="https://github.com/androiddevbr/codigo-de-conduta"
+                className={classes.block}
+                target="_blank"
+              >
+                Código de conduta
               </a>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
           <a
             href="https://www.creative-tim.com"
             className={aClasses}
@@ -74,7 +97,8 @@ function Footer({ ...props }) {
           >
             Creative Tim
           </a>{" "}
-          for a better web.
+          &copy; {1900 + new Date().getYear()}
+          {" "}Adaptado pela moderação do ADBR.
         </div>
       </div>
     </footer>
