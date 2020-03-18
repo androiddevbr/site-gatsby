@@ -8,7 +8,6 @@ import GridItem from "components/Grid/GridItem.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 
 import productStyle from "assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx";
-import SvgIcon from "@material-ui/icons/Chat";
 
 class ProductSection extends React.Component {
   render() {
@@ -27,7 +26,7 @@ class ProductSection extends React.Component {
                 <InfoArea
                   title="Diversidade e inclusão"
                   description="Nós adotamos a política de tolerância zero para assédio, perseguições ou discriminações e respeitamos os limites e identidade das pessoas."
-                  icon={() => <img src={require("assets/img/chat.png")} />}
+                  icon={() => <img src={require("assets/img/chat.png")} alt="Ícone de chat" />}
                   iconColor="info"
                   horizontal
                 />
@@ -36,7 +35,7 @@ class ProductSection extends React.Component {
                 <InfoArea
                   title="Segurança"
                   description="Cultivamos uma rede de suporte e encorajamento para todos e suas variadas formas de expressão de maneira responsável."
-                  icon={() => <img src={require("assets/img/conversation.png")} />}
+                  icon={() => <img src={require("assets/img/conversation.png")} alt="Ícone de conversa" />}
                   iconColor="success"
                   horizontal
                 />
@@ -47,7 +46,7 @@ class ProductSection extends React.Component {
                   description={<span>Prezamos pelo bom senso e pela boa conduta, por isso temos um
                     código de conduta que deve ser seguido a risca sob pena de expulsão da comunidade.
                   Veja <a href="https://github.com/androiddevbr/codigo-de-conduta">aqui</a></span>}
-                  icon={() => <img src={require("assets/img/law.png")} />}
+                  icon={() => <img src={require("assets/img/law.png")} alt="Ícone repesentando lei" />}
                   iconColor="danger"
                   horizontal
                 />

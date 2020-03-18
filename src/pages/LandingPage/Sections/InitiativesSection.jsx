@@ -32,14 +32,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={podcast} className={classes.image} />
+                                    <img src={podcast} className={classes.image} alt="Ícone de podcast" />
                                     <h4 className={classes.cardTitle}>Podcast</h4>
                                     <p>Podcasts sobre diversos assuntos relacionados a desenvolvimento Android.</p>
                                     <a
                                         href="https://pod.link/1387735341"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Ouvir</a>
                                 </CardBody>
                             </Card>
@@ -47,14 +47,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={work} className={classes.image} />
+                                    <img src={work} className={classes.image} alt="Ícone de trabalho" />
                                     <h4 className={classes.cardTitle}>Mural de vagas</h4>
                                     <p>Diversas vagas Android para todos os níveis, no Brasil e no mundo, presencial ou remoto.</p>
                                     <a
                                         href="https://github.com/androiddevbr/vagas/issues"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Ver vagas</a>
                                 </CardBody>
                             </Card>
@@ -62,14 +62,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={youtube} className={classes.image} />
+                                    <img src={youtube} className={classes.image} alt="Ícone do Youtube" />
                                     <h4 className={classes.cardTitle}>YouTube</h4>
                                     <p>Vídeos e lives sobre questões técnicas e pessoal do desenvolvimento Android.</p>
                                     <a
                                         href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Ver vídeos</a>
                                 </CardBody>
                             </Card>
@@ -77,14 +77,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={medium} className={classes.image} />
+                                    <img src={medium} className={classes.image} alt="Ícone do Medium" />
                                     <h4 className={classes.cardTitle}>Medium</h4>
                                     <p>Diversos posts sobre desenvolvimento Android para qualquer nível de conhecimento.</p>
                                     <a
                                         href="https://medium.com/android-dev-br/"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Ver posts</a>
                                 </CardBody>
                             </Card>
@@ -92,14 +92,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={slack} className={classes.image} />
+                                    <img src={slack} className={classes.image} alt="Ícone do Slack" />
                                     <h4 className={classes.cardTitle}>Slack</h4>
                                     <p>Diversos canais para comunicação, dúvidas técnicas, ajuda na carreira, anúncios da comunidade, etc.</p>
                                     <a
                                         href="http://slack.androiddevbr.org/"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Entrar</a>
                                 </CardBody>
                             </Card>
@@ -107,14 +107,14 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={study} className={classes.image} />
+                                    <img src={study} className={classes.image} alt="Ícone de podcast" />
                                     <h4 className={classes.cardTitle}>Material de Estudo</h4>
                                     <p>Lista de sugestões de materiais para estudo da plataforma Android. Para todos os níveis.</p>
                                     <a
                                         href="https://github.com/androiddevbr/materiais-de-estudo"
                                         target="_blank"
-                                        className={classes.cardLink}
-                                        onClick={(e) => e.preventDefault()}>
+                                        rel="noopener noreferrer"
+                                        className={classes.cardLink}>
                                         Ver material</a>
                                 </CardBody>
                             </Card>

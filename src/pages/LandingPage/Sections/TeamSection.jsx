@@ -1,13 +1,6 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
-// @material-ui/icons
-
-// React icons
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -25,9 +18,8 @@ class TeamSection extends React.Component {
             <h2 className={classes.title}>Quem somos?</h2>
             <h5 className={classes.description}>
               <strong>Uma comunidade brasileira para troca de experiências e aprendizado Android</strong><br />
-              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-              nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea
-              voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo.
+              Somos uma comunidade para profissionais e estudantes do desenvolvimento Android.
+              Nenhuma experiência prévia é necesssária para fazer parte. Nosso objetivo é levantar conteúdos e discussões relevantes dentro do própósito da comunidade.
             </h5>
           </GridItem>
           <GridItem xs={12} sm={12} md={8}>
