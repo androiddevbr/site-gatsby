@@ -15,7 +15,8 @@ export default () => (
   <div className="application">
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Android DEV BR</title>
+      <title>Android Dev BR</title>
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7344016.js"></script>
     </Helmet>
     <Router history={hist}>
       <Switch>

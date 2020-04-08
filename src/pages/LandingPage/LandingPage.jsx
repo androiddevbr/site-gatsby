@@ -48,9 +48,9 @@ class LandingPage extends React.Component {
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Android, Kotlin e tudo relacionado.</h1>
-                <h4>
-                  Uma comunidade para desenvolvedores Android de todo o Brasil.
+                <h1 className={classes.title}>Android, Kotlin e muito mais!</h1>
+                <h4 style={{maxWidth: 400}}>
+                  Uma comunidade para pessoas desenvolvedoras de Android de todo o Brasil.
                 </h4>
                 <br />
                 <Button
@@ -67,15 +67,19 @@ class LandingPage extends React.Component {
             </GridContainer>
           </div>
         </Parallax>
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <TeamSection />
-            <ProductSection />
-          </div>
-        </div>
+        <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={8}>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+              <div className={classes.container}>
+                <TeamSection />
+                <ProductSection />
+              </div>
+            </div>
+          </GridItem>
+        </GridContainer>
         <InitiativesSection />
         <Footer />
-      </div>
+      </div >
     );
   }
 }

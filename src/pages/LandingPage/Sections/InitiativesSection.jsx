@@ -25,10 +25,10 @@ class InitiativesSection extends React.Component {
         return (
             <div className={classes.section} id="initiatives">
                 <GridContainer justify="center">
-                    <GridItem cs={12} sm={12} md={8}>
+                    <GridItem cs={12} sm={11} md={8}>
                         <h2 className={classes.title}>Temos diversas iniciativas para a comunidade:</h2>
                     </GridItem>
-                    <GridContainer xs={12} sm={12} md={8} justify="center">
+                    <GridContainer xs={11} sm={11} md={8} justify="center">
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
