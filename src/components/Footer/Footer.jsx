@@ -62,7 +62,7 @@ function Footer({ ...props }) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://medium.com/android-dev-br"
+                href="http://medium.androiddevbr.org"
                 className={classes.block}
                 target="_blank"
               >
@@ -71,7 +71,7 @@ function Footer({ ...props }) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://pod.link/1387735341"
+                href="http://podcast.androiddevbr.org"
                 className={classes.block}
                 target="_blank"
               >

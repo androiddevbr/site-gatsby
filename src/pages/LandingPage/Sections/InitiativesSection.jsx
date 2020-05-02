@@ -14,7 +14,7 @@ import initiativeStyle from "assets/jss/material-kit-react/views/landingPageSect
 
 import podcast from "assets/img/podcast.png";
 import work from "assets/img/work.png";
-import youtube from "assets/img/youtube.png";
+import news from "assets/img/news.png";
 import medium from "assets/img/medium.png";
 import slack from "assets/img/slack.png";
 import study from "assets/img/study.png";
@@ -36,7 +36,7 @@ class InitiativesSection extends React.Component {
                                     <h4 className={classes.cardTitle}>Podcast</h4>
                                     <p>Podcasts sobre diversos assuntos relacionados a desenvolvimento Android.</p>
                                     <a
-                                        href="https://pod.link/1387735341"
+                                        href="http://podcast.androiddevbr.org"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={classes.cardLink}>
@@ -51,7 +51,7 @@ class InitiativesSection extends React.Component {
                                     <h4 className={classes.cardTitle}>Mural de vagas</h4>
                                     <p>Diversas vagas Android para todos os níveis, no Brasil e no mundo, presencial ou remoto.</p>
                                     <a
-                                        href="https://github.com/androiddevbr/vagas/issues"
+                                        href="http://vagas.androiddevbr.org"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={classes.cardLink}>
@@ -62,15 +62,15 @@ class InitiativesSection extends React.Component {
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes.textCenter}>
                                 <CardBody>
-                                    <img src={youtube} className={classes.image} alt="Ícone do Youtube" />
-                                    <h4 className={classes.cardTitle}>YouTube</h4>
-                                    <p>Vídeos e lives sobre questões técnicas e pessoal do desenvolvimento Android.</p>
+                                    <img src={news} className={classes.image} alt="Ícone de jornal" />
+                                    <h4 className={classes.cardTitle}>Newsletter</h4>
+                                    <p>Informativos mensais sobre novidades e eventos de desenvolvimento Android.</p>
                                     <a
-                                        href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA"
+                                        href="http://newsletter.androiddevbr.org"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={classes.cardLink}>
-                                        Ver vídeos</a>
+                                        Inscrever</a>
                                 </CardBody>
                             </Card>
                         </GridItem>
@@ -81,7 +81,7 @@ class InitiativesSection extends React.Component {
                                     <h4 className={classes.cardTitle}>Medium</h4>
                                     <p>Diversos posts sobre desenvolvimento Android para qualquer nível de conhecimento.</p>
                                     <a
-                                        href="https://medium.com/android-dev-br/"
+                                        href="http://medium.androiddevbr.org"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={classes.cardLink}>

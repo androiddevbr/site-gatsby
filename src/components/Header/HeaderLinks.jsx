@@ -103,7 +103,7 @@ function HeaderLinks({ ...props }) {
         >
           <Button
             color="transparent"
-            href="https://medium.com/android-dev-br"
+            href="http://medium.androiddevbr.org"
             target="_blank"
             className={classes.navLink}
           >
@@ -120,7 +120,7 @@ function HeaderLinks({ ...props }) {
         >
           <Button
             color="transparent"
-            href="https://pod.link/1387735341"
+            href="http://podcast.androiddevbr.org"
             target="_blank"
             className={classes.navLink}
           >
