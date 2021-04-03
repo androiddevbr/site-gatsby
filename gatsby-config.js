@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `product`,
-        path: `${__dirname}/src/images/product`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -38,10 +38,88 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#259347`,
+        theme_color: `#259347`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/logo.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://androiddevbr.us17.list-manage.com/subscribe/post?u=fca2e57107180ec967ad9b6cb&amp;id=1b10013da7", // string; add your MC list endpoint here; see instructions below
+        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    {
+      resolve: "gatsby-source-github",
+      options: {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+        },
+        queries: [
+          `
+          {
+            repository(owner: "androiddevbr", name: "codigo-de-conduta") {
+              name
+              object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+          `
+          {
+            repository(owner: "androiddevbr", name: "como-contribuir") {
+              name
+              object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+          `
+          {
+            repository(owner: "androiddevbr", name: "materiais-de-estudo") {
+              name
+              object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+          `
+          {
+            repository(owner: "androiddevbr", name: "vagas") {
+              name
+              object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+          `
+          {
+            repository(owner: "androiddevbr", name: "sugestoes-temas") {
+              name
+              object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,5 +1,15 @@
+import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faLinkedin,
+  faInstagram,
+  faFacebook,
+  faGithub,
+  faTwitter,
+  faTelegram,
+} from "@fortawesome/free-brands-svg-icons"
 
 import { Container } from "../global"
 
@@ -7,36 +17,71 @@ const Footer = () => (
   <FooterWrapper id="footer">
     <FooterColumnContainer>
       <FooterColumn>
-        <span>Features</span>
+        <span>Comunidade</span>
         <ul>
-          <li>Automation</li>
-          <li>Rewards</li>
+          <li>
+            <Link to="/comunidade">Quem Somos</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/diversidade-inclusao">Diversidade & Inclusão</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <Link to="/codigo-de-conduta">Código de Conduta</Link>
+          </li>
         </ul>
       </FooterColumn>
       <FooterColumn>
-        <span>Resources</span>
+        <span>Acompanhe nas redes</span>
         <ul>
-          <li>Compare</li>
-          <li>Blog</li>
-        </ul>
-      </FooterColumn>
-      <FooterColumn>
-        <span>Company</span>
-        <ul>
-          <li>About Us</li>
-          <li>Careers</li>
-        </ul>
-      </FooterColumn>
-      <FooterColumn>
-        <span>Social</span>
-        <ul>
-          <li>LinkedIn</li>
-          <li>Instagram</li>
+          <FooterIcon>
+            <a href="https://www.linkedin.com/company/android-dev-br">
+              <FontAwesomeIcon icon={faLinkedin} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://www.instagram.com/androiddevbr/">
+              <FontAwesomeIcon icon={faInstagram} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://www.facebook.com/AndroidDevBrOrg/">
+              <FontAwesomeIcon icon={faFacebook} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://twitter.com/AndroidDevBROrg">
+              <FontAwesomeIcon icon={faTwitter} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://t.me/androiddevbr">
+              <FontAwesomeIcon icon={faTelegram} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://github.com/androiddevbr">
+              <FontAwesomeIcon icon={faGithub} size={"2x"} />
+            </a>
+          </FooterIcon>
         </ul>
       </FooterColumn>
     </FooterColumnContainer>
     <BrandContainer>
-      <Logo>Finance</Logo>
+      <Logo>Android Dev BR</Logo>
+      <FooterCredit>
+        Ícones por{" "}
+        <a href="https://fontawesome.com/" target="_blank">
+          FontAwesome
+        </a>{" "}
+        <br/> Illustrações por{" "}
+        <a href="https://storyset.com/mobile" target="_blank">
+          Freepik Storyset
+        </a>{" "}
+      </FooterCredit>
     </BrandContainer>
   </FooterWrapper>
 )
@@ -48,9 +93,9 @@ const FooterWrapper = styled.footer`
 `
 
 const Logo = styled.div`
-  font-family: ${props => props.theme.font.extrabold};
-  ${props => props.theme.font_size.regular};
-  color: ${props => props.theme.color.black.regular};
+  font-family: ${(props) => props.theme.font.extrabold};
+  ${(props) => props.theme.font_size.large};
+  color: ${(props) => props.theme.color.black.regular};
   text-decoration: none;
   letter-spacing: 1px;
   margin: 0;
@@ -67,17 +112,18 @@ const BrandContainer = styled(Container)`
   position: relative;
   padding-top: 48px;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
   }
 `
 const FooterColumnContainer = styled(Container)`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 32px;
   justify-content: start;
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
   }
@@ -85,20 +131,34 @@ const FooterColumnContainer = styled(Container)`
 const FooterColumn = styled.div`
   span {
     font-size: 16px;
-    font-family: ${props => props.theme.font.bold};
-    color: ${props => props.theme.color.primary};
+    font-family: ${(props) => props.theme.font.bold};
+    color: ${(props) => props.theme.color.primary};
   }
   ul {
     list-style: none;
     margin: 16px 0;
     padding: 0;
-    color: ${props => props.theme.color.black.regular};
+    display: flex;
+    flex-wrap: wrap;
+    color: ${(props) => props.theme.color.black.regular};
     li {
-      margin-bottom: 12px;
-      font-family: ${props => props.theme.font.normal};
+      font-family: ${(props) => props.theme.font.normal};
       font-size: 15px;
+      display: inline;
+      margin-right: 12px;
     }
   }
+`
+
+const FooterIcon = styled.li`
+  width: 30px;
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
+    margin-bottom: 12px;
+  }
+`
+
+const FooterCredit = styled.span`
+  text-align: end;
 `
 
 export default Footer

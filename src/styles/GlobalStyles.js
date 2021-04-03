@@ -9,69 +9,80 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     ${"" /* change this if implementing light/dark mode functionality */}
-    color: ${props => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary};
 
   }
   
   body {
-    font-family: ${props => props.theme.font.primary};
+    font-family: ${(props) => props.theme.font.primary};
   }
 
   
   h1 {
-    ${props => props.theme.font_size.xlarge};
-    font-family: ${props => props.theme.font.bold};
+    ${(props) => props.theme.font_size.xlarge};
+    font-family: ${(props) => props.theme.font.bold};
     
   }
 
   h2 {
-    ${props => props.theme.font_size.larger};
+    ${(props) => props.theme.font_size.larger};
+    font-family: ${(props) => props.theme.font.bold};
   }
 
   h3 {
-    ${props => props.theme.font_size.larger};
-    font-family: ${props => props.theme.font.bold};
+    ${(props) => props.theme.font_size.larger};
+    font-family: ${(props) => props.theme.font.bold};
   }
 
   h4 {
-    ${props => props.theme.font_size.large};
-    font-family: ${props => props.theme.font.bold};
+    ${(props) => props.theme.font_size.large};
+    font-family: ${(props) => props.theme.font.bold};
   }
 
   h5 {
-    ${props => props.theme.font_size.xsmall};
-    font-family: ${props => props.theme.font.normal};
+    ${(props) => props.theme.font_size.xsmall};
+    font-family: ${(props) => props.theme.font.normal};
   }
 
   p {
-    ${props => props.theme.font_size.small};
+    ${(props) => props.theme.font_size.small};
     line-height: 22px;
 
   }
 
   input {
-    font-family: ${props => props.theme.font.normal};
+    font-family: ${(props) => props.theme.font.normal};
   }
 
-  @media (max-width: ${props => props.theme.screen.sm}) {
+  table, th, td {
+    border: 0.6px solid gray;
+    border-collapse: collapse;
+    padding: 12px;
+  }
+
+  thead {
+    font-family: ${(props) => props.theme.font.bold};
+  }
+
+  @media (max-width: ${(props) => props.theme.screen.sm}) {
     h1 {
-      ${props => props.theme.font_size.larger};
+      ${(props) => props.theme.font_size.larger};
     }
 
     h2 {
-      ${props => props.theme.font_size.large};
+      ${(props) => props.theme.font_size.large};
     }
 
     h3 {
-      ${props => props.theme.font_size.regular};
+      ${(props) => props.theme.font_size.regular};
     }
 
     p {
-      ${props => props.theme.font_size.small};
+      ${(props) => props.theme.font_size.small};
     }
   }
 
-  @media (max-width: ${props => props.theme.screen.xs}) {
+  @media (max-width: ${(props) => props.theme.screen.xs}) {
 
     h1 {
 
@@ -106,6 +117,8 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     cursor: pointer;
+    text-decoration: none;
+    color: ${(props) => props.theme.color.secondary}
   }
 
 `

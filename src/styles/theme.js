@@ -8,8 +8,8 @@ const theme = {
     normal: `'HK Grotesk Normal'`,
     medium: `'HK Grotesk Medium'`,
     semibold: `'HK Grotesk Semibold'`,
-    bold: `'HK Grotesk Bold'`,
-    extrabold: `'HK Grotesk Extra Bold'`,
+    bold: `'Staatliches'`,
+    extrabold: `'Staatliches'`,
   },
   font_size: {
     xxxsmall: "font-size: 12px;",
@@ -24,8 +24,10 @@ const theme = {
 
   color: {
     primary: "#071435",
-    secondary: "#098c8c",
-    accent: "#cca86e",
+    secondary: "#259347",
+    accent: "#002478",
+    green: "#3edb85",
+    red: "#aa1933",
     background: {
       white: "#ffffff",
       light: "#f8f8f8",
