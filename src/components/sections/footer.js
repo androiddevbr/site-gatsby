@@ -74,11 +74,11 @@ const Footer = () => (
       <Logo>Android Dev BR</Logo>
       <FooterCredit>
         Ícones por{" "}
-        <a href="https://fontawesome.com/" target="_blank">
+        <a href="https://fontawesome.com/" rel="noreferrer" target="_blank">
           FontAwesome
         </a>{" "}
-        <br/> Illustrações por{" "}
-        <a href="https://storyset.com/mobile" target="_blank">
+        <br /> Illustrações por{" "}
+        <a href="https://storyset.com/mobile" rel="noreferrer" target="_blank">
           Freepik Storyset
         </a>{" "}
       </FooterCredit>
@@ -158,6 +158,7 @@ const FooterIcon = styled.li`
 `
 
 const FooterCredit = styled.span`
+  margin-top: 12px;
   text-align: end;
 `
 

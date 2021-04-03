@@ -29,7 +29,7 @@ const Image = () => {
   return (
     <Img
       fluid={data.placeholderImage.childImageSharp.fluid}
-      style={{ borderRadius: "12px", flexGrow: '1.6' }}
+      style={{ borderRadius: "12px", flexGrow: "1.6" }}
     />
   )
 }

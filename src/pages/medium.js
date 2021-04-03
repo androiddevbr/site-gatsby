@@ -29,7 +29,7 @@ const MediumPage = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/android-dev-br&api_key=${process.env.RSS_TOKEN}`
+      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/android-dev-br&api_key=${process.env.GATSBY_RSS_TOKEN}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -44,53 +44,60 @@ const MediumPage = () => {
       <MediumWrapper>
         <Container>
           <h1>Medium</h1>
-          <p>{data.feed.description.replace("- Medium", "")}</p>
-          <CardsContainer>
-            {(data.items || []).map((item) => (
-              <CardItem key={item.guid}>
-                <a href={item.link} target="_blank">
-                  <Card>
-                    <div style={{ height: "200px" }}>
-                      <CardImage src={item.thumbnail} />
-                    </div>
-                    <CardContent>
-                      <p
-                        style={{
-                          marginBottom: "8px",
-                          fontSize: "12px",
-                          color: theme.color.black.lightest,
-                        }}
-                      >
-                        {new Intl.DateTimeFormat("pt-BR", {
-                          dateStyle: "medium",
-                        }).format(new Date(item.pubDate))}
-                      </p>
-                      <h4
-                        style={{
-                          margin: "2px 0",
-                          fontSize: "20px",
-                          height: "62px",
-                          overflow: "hidden",
-                        }}
-                      >
-                        {item.title}
-                      </h4>
-                      <p
-                        style={{
-                          marginBottom: "8px",
-                          color: theme.color.accent,
-                        }}
-                      >
-                        {item.author}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </a>
-              </CardItem>
-            ))}
-          </CardsContainer>
-
-          <SecondaryButton href={data.feed.link} target="_blank">
+          {data && (
+            <>
+              <p>{data.feed.description.replace("- Medium", "")}</p>
+              <CardsContainer>
+                {(data.items || []).map((item) => (
+                  <CardItem key={item.guid}>
+                    <a href={item.link} target="_blank" rel="noreferrer">
+                      <Card>
+                        <div style={{ height: "200px" }}>
+                          <CardImage src={item.thumbnail} />
+                        </div>
+                        <CardContent>
+                          <p
+                            style={{
+                              marginBottom: "8px",
+                              fontSize: "12px",
+                              color: theme.color.black.lightest,
+                            }}
+                          >
+                            {new Intl.DateTimeFormat("pt-BR", {
+                              dateStyle: "medium",
+                            }).format(new Date(item.pubDate))}
+                          </p>
+                          <h4
+                            style={{
+                              margin: "2px 0",
+                              fontSize: "20px",
+                              height: "62px",
+                              overflow: "hidden",
+                            }}
+                          >
+                            {item.title}
+                          </h4>
+                          <p
+                            style={{
+                              marginBottom: "8px",
+                              color: theme.color.accent,
+                            }}
+                          >
+                            {item.author}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </a>
+                  </CardItem>
+                ))}
+              </CardsContainer>
+            </>
+          )}
+          <SecondaryButton
+            href={data.feed.link}
+            rel="noreferrer"
+            target="_blank"
+          >
             Ver mais posts
           </SecondaryButton>
         </Container>

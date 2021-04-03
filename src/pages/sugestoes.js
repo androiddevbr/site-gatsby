@@ -10,6 +10,7 @@ import { Container } from "../components/global"
 import { updateLinks } from "../utils"
 import Footer from "../components/sections/footer"
 import { graphql, StaticQuery } from "gatsby"
+import { SecondaryButton } from "../components/common/button"
 
 const SuggestionsPage = () => (
   <StaticQuery
@@ -37,6 +38,12 @@ const SuggestionsPage = () => (
               )}
               allowDangerousHtml
             />
+            <SecondaryButton
+              target="_blank"
+              href="https://github.com/androiddevbr/sugestoes-temas/issues/new?assignees=orafaaraujo&labels=Backlog&template=tema-sugerido.md&title="
+            >
+              Sugerir tema
+            </SecondaryButton>
           </Container>
         </SuggestionWrapper>
         <Footer />

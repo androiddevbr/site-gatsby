@@ -29,7 +29,7 @@ const PodcastPage = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=https://anchor.fm/s/1d9d1828/podcast/rss&api_key=${process.env.RSS_TOKEN}`
+      `https://api.rss2json.com/v1/api.json?rss_url=https://anchor.fm/s/1d9d1828/podcast/rss&api_key=${process.env.GATSBY_RSS_TOKEN}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -45,45 +45,53 @@ const PodcastPage = () => {
       <PodcastWrapper>
         <Container>
           <h1>Podcast</h1>
-          <p>{data.feed.description}</p>
-          <CardsContainer>
-            {(data.items || []).map((item) => (
-              <CardItem key={item.guid}>
-                <a href={item.link} target="_blank">
-                  <Card>
-                    <CardContent>
-                      <p
-                        style={{
-                          marginBottom: "8px",
-                          fontSize: "12px",
-                          color: theme.color.black.lightest,
-                        }}
-                      >
-                        {new Intl.DateTimeFormat("pt-BR", {
-                          dateStyle: "medium",
-                        }).format(new Date(item.pubDate))}
-                      </p>
-                      <h4
-                        style={{
-                          margin: "2px 0",
-                          fontSize: "20px",
-                          height: "62px",
-                          overflow: "hidden",
-                        }}
-                      >
-                        {item.title}
-                      </h4>
-                      <p style={{ color: theme.color.accent }}>
-                        {getTime(item.enclosure.duration)}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </a>
-              </CardItem>
-            ))}
-          </CardsContainer>
 
-          <SecondaryButton href={data.feed.link} target="_blank">
+          {data && (
+            <>
+              <p>{data.feed.description}</p>
+              <CardsContainer>
+                {(data.items || []).map((item) => (
+                  <CardItem key={item.guid}>
+                    <a href={item.link} target="_blank" rel="noreferrer">
+                      <Card>
+                        <CardContent>
+                          <p
+                            style={{
+                              marginBottom: "8px",
+                              fontSize: "12px",
+                              color: theme.color.black.lightest,
+                            }}
+                          >
+                            {new Intl.DateTimeFormat("pt-BR", {
+                              dateStyle: "medium",
+                            }).format(new Date(item.pubDate))}
+                          </p>
+                          <h4
+                            style={{
+                              margin: "2px 0",
+                              fontSize: "20px",
+                              height: "62px",
+                              overflow: "hidden",
+                            }}
+                          >
+                            {item.title}
+                          </h4>
+                          <p style={{ color: theme.color.accent }}>
+                            {getTime(item.enclosure.duration)}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </a>
+                  </CardItem>
+                ))}
+              </CardsContainer>
+            </>
+          )}
+          <SecondaryButton
+            href={data.feed.link}
+            rel="noreferrer"
+            target="_blank"
+          >
             Ver mais episódios
           </SecondaryButton>
         </Container>

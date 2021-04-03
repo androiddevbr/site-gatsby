@@ -36,6 +36,7 @@ const Header = () => {
               <a
                 href="http://slack.androiddevbr.org/"
                 target="_blank"
+                rel="noreferrer"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 Entrar no Slack
@@ -149,6 +150,5 @@ const StyledImage = styled(Img)`
   }
   @media (max-width: ${(props) => props.theme.screen.sm}) {
     width: 300px;
-    
   }
 `

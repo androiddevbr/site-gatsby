@@ -48,8 +48,9 @@ const Features = () => (
         <FeatureItem>
           <FeatureTitle>Materiais de estudo</FeatureTitle>
           <FeatureText>
-            Lista de sugestões de <Link to="/estudos">materiais para estudo</Link> da plataforma Android.
-            Para todos os níveis.
+            Lista de sugestões de{" "}
+            <Link to="/estudos">materiais para estudo</Link> da plataforma
+            Android. Para todos os níveis.
           </FeatureText>
         </FeatureItem>
       </FeaturesGrid>

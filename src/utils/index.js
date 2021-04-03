@@ -7,19 +7,19 @@ export const updateLinks = (
   return String(text).replaceAll(regex, (substring) => {
     if (substring.indexOf("http") > 0) return substring
     else if (substring.indexOf("#") > 0)
-      return `](${url}/${name}/${substring.replaceAll(/[\]\(\)]/g, "")})`
+      return `](${url}/${name}/${substring.replaceAll(/[\]()]/g, "")})`
     else
       return `](${url}/${name}/blob/master/${substring.replaceAll(
-        /[\]\(\)]/g,
+        /[\]()]/g,
         ""
       )})`
   })
 }
 
-export const getTime = (seconds) => {
-  var hours = Math.floor(seconds / 3600)
-  var minutes = Math.floor((seconds - hours * 3600) / 60)
-  var seconds = seconds - hours * 3600 - minutes * 60
+export const getTime = (sec) => {
+  var hours = Math.floor(sec / 3600)
+  var minutes = Math.floor((sec - hours * 3600) / 60)
+  var seconds = sec - hours * 3600 - minutes * 60
 
   if (hours < 10) {
     hours = "0" + hours

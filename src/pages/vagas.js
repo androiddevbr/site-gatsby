@@ -24,11 +24,10 @@ import { SecondaryButton } from "../components/common/button"
 const JobsPage = () => {
   const [data, setData] = useState([])
 
-  const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN,
-  })
-
   useEffect(() => {
+    const octokit = new Octokit({
+      auth: process.env.GATSBY_GITHUB_TOKEN,
+    })
     octokit
       .request("GET /repos/androiddevbr/vagas/issues", {
         state: "open",
@@ -64,7 +63,7 @@ const JobsPage = () => {
               <CardsContainer>
                 {(data || []).map((item) => (
                   <CardItem key={item.id}>
-                    <a href={item.html_url} target="_blank">
+                    <a href={item.html_url} rel="noreferrer" target="_blank">
                       <Card>
                         <CardContent>
                           <p
@@ -89,7 +88,7 @@ const JobsPage = () => {
                             {item.title}
                           </h4>
                           {item.labels.map((label) => (
-                            <Chip>{label.name}</Chip>
+                            <Chip key={label.id}>{label.name}</Chip>
                           ))}
                         </CardContent>
                       </Card>
@@ -101,6 +100,7 @@ const JobsPage = () => {
               <SecondaryButton
                 href="https://github.com/androiddevbr/vagas/issues"
                 target="_blank"
+                rel="noreferrer"
               >
                 Ver mais vagas
               </SecondaryButton>

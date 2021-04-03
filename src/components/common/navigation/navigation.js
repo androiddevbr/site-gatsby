@@ -81,7 +81,11 @@ export default class Navigation extends Component {
           }
         `}
         render={(data) => (
-          <Nav {...this.props} scrolled={this.state.hasScrolled} mobileMenuOpen={mobileMenuOpen}>
+          <Nav
+            {...this.props}
+            scrolled={this.state.hasScrolled}
+            mobileMenuOpen={mobileMenuOpen}
+          >
             <StyledContainer>
               <Brand>
                 <Scrollspy

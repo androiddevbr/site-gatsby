@@ -11,7 +11,12 @@ const NotFoundPage = () => (
     <Navigation />
     <NotFoundTextGoup>
       <h1>Ops!</h1>
-      <p>Parece que você está tentando acessar uma página que não existe 🤔</p>
+      <p>
+        Parece que você está tentando acessar uma página que não existe{" "}
+        <span role="img" aria-label="pensando">
+          🤔
+        </span>
+      </p>
     </NotFoundTextGoup>
   </Layout>
 )

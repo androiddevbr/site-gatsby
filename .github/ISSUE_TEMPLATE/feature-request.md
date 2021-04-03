@@ -22,4 +22,4 @@ If the proposal involves a new or changed API, include a basic code example. Omi
 
 ### Motivation
 
-Why are we doing this? 
+Why are we doing this?
