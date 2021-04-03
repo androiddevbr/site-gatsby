@@ -29,7 +29,7 @@ const MediumPage = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/android-dev-br&api_key=RSS_TOKEN"
+      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/android-dev-br&api_key=${process.env.RSS_TOKEN}`
     )
       .then((res) => res.json())
       .then((data) => {

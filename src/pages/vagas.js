@@ -25,7 +25,7 @@ const JobsPage = () => {
   const [data, setData] = useState([])
 
   const octokit = new Octokit({
-    auth: `GITHUB_TOKEN`,
+    auth: process.env.GITHUB_TOKEN,
   })
 
   useEffect(() => {
@@ -88,7 +88,9 @@ const JobsPage = () => {
                           >
                             {item.title}
                           </h4>
-                          {item.labels.map(label => <Chip>{label.name}</Chip>)}
+                          {item.labels.map((label) => (
+                            <Chip>{label.name}</Chip>
+                          ))}
                         </CardContent>
                       </Card>
                     </a>
@@ -104,7 +106,7 @@ const JobsPage = () => {
               </SecondaryButton>
 
               <ReactMarkdownWithHtml
-              plugins={[gfm]}
+                plugins={[gfm]}
                 children={updateLinks(
                   decodeURIComponent(githubRepository.object.text),
                   githubRepository.name
@@ -130,11 +132,11 @@ const JobsWrapper = styled.div`
 
 const Chip = styled.div`
   display: inline-block;
-  background: ${props => props.theme.color.green};
+  background: ${(props) => props.theme.color.green};
   padding: 4px 12px;
   border-radius: 32px;
   font-size: 10px;
   margin-right: 8px;
   margin-top: 8px;
-  color: ${props => props.theme.color.accent}
+  color: ${(props) => props.theme.color.accent};
 `

@@ -47,8 +47,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint:
-          "https://androiddevbr.us17.list-manage.com/subscribe/post?u=fca2e57107180ec967ad9b6cb&amp;id=1b10013da7", // string; add your MC list endpoint here; see instructions below
+        endpoint: `https://androiddevbr.us17.list-manage.com/subscribe/post?u=fca2e57107180ec967ad9b6cb&amp;id=1b10013da7`, // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
@@ -56,7 +55,7 @@ module.exports = {
       resolve: "gatsby-source-github",
       options: {
         headers: {
-          Authorization: `Bearer GITHUB_TOKEN`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
         },
         queries: [
           `

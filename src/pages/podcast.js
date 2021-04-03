@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react"
 
 import styled from "styled-components"
 import { SecondaryButton } from "../components/common/button"
-import { Card, CardContent, CardItem, CardsContainer } from "../components/common/card"
+import {
+  Card,
+  CardContent,
+  CardItem,
+  CardsContainer,
+} from "../components/common/card"
 
 import Layout from "../components/common/layout/layout"
 import SEO from "../components/common/layout/seo"
@@ -10,7 +15,7 @@ import Navigation from "../components/common/navigation/navigation"
 import { Container } from "../components/global"
 import Footer from "../components/sections/footer"
 import theme from "../styles/theme"
-import {getTime} from "../utils"
+import { getTime } from "../utils"
 
 const PodcastPage = () => {
   const [data, setData] = useState({
@@ -24,7 +29,7 @@ const PodcastPage = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://anchor.fm/s/1d9d1828/podcast/rss&api_key=RSS_TOKEN"
+      `https://api.rss2json.com/v1/api.json?rss_url=https://anchor.fm/s/1d9d1828/podcast/rss&api_key=${process.env.RSS_TOKEN}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -68,7 +73,9 @@ const PodcastPage = () => {
                       >
                         {item.title}
                       </h4>
-                      <p style={{color: theme.color.accent}}>{getTime(item.enclosure.duration)}</p>
+                      <p style={{ color: theme.color.accent }}>
+                        {getTime(item.enclosure.duration)}
+                      </p>
                     </CardContent>
                   </Card>
                 </a>
