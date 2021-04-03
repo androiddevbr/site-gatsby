@@ -1,10 +1,6 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter SaaS Marketing`,
+    title: `Android Dev BR`,
     description: `A simple one page marketing starter for saas companies.`,
     author: `Keegan Burkett`,
   },
@@ -55,7 +51,7 @@ module.exports = {
       resolve: "gatsby-source-github",
       options: {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN || ''}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
         },
         queries: [
           `
