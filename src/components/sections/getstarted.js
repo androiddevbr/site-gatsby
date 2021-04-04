@@ -26,6 +26,7 @@ const GetStarted = () => {
       <GetStartedContainer>
         <GetStartedTitle>Assine a nossa Newsletter!</GetStartedTitle>
         <NewsletterForm onSubmit={handleSubmit} data-netlify="true">
+          <input type="hidden" name="form-name" value="newsletter" />
           <NewsletterInput
             required
             placeholder="Nome"
