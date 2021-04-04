@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `android-dev-br`,
+        short_name: `adbr`,
         start_url: `/`,
         background_color: `#259347`,
         theme_color: `#259347`,
