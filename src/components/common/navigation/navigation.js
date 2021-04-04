@@ -54,6 +54,8 @@ export default class Navigation extends Component {
         <NavLink to="/vagas">Vagas</NavLink>
         <NavLink to="/medium">Medium</NavLink>
         <NavLink to="/podcast">Podcast</NavLink>
+        <NavLink to="/videos">Vídeos</NavLink>
+        <NavLink to="/discussoes">Discussões</NavLink>
         <NavLink to="/estudos">Materiais de Estudo</NavLink>
         <NavLink to="/sugestoes">Sugestões de Temas</NavLink>
         <NavLink to="/como-contribuir">Como Contribuir</NavLink>

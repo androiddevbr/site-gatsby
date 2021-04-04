@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 import styled from "styled-components"
-import { SecondaryButton } from "../components/common/button"
-import {
-  Card,
-  CardContent,
-  CardItem,
-  CardsContainer,
-} from "../components/common/card"
 
 import Layout from "../components/common/layout/layout"
 import SEO from "../components/common/layout/seo"
@@ -15,9 +8,16 @@ import Navigation from "../components/common/navigation/navigation"
 import { Container } from "../components/global"
 import Footer from "../components/sections/footer"
 import theme from "../styles/theme"
-import { getTime } from "../utils"
+import {
+  CardsContainer,
+  CardContent,
+  CardImage,
+  Card,
+  CardItem,
+} from "../components/common/card"
+import { SecondaryButton } from "../components/common/button"
 
-const PodcastPage = () => {
+const YoutubePage = () => {
   const [data, setData] = useState({
     feed: {
       title: "",
@@ -29,7 +29,7 @@ const PodcastPage = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=https://anchor.fm/s/1d9d1828/podcast/rss&api_key=${process.env.GATSBY_RSS_TOKEN}`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC3UIetA7QQJNyt25BXcUALA&maxResults=6&order=date&type=video&key=${process.env.GATSBY_GOOGLE_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -39,20 +39,33 @@ const PodcastPage = () => {
 
   return (
     <Layout>
-      <SEO title="Podcast" />
+      <SEO title="Vídeos" />
       <Navigation />
-      <PodcastWrapper>
+      <YoutubeWrapper>
         <Container>
-          <h1>Podcast</h1>
-
+          <h1>Vídeos</h1>
           {data && (
             <>
-              <p>{data.feed.description}</p>
+              <p>
+                Meetups, talks e lives que aconteceram no nosso{" "}
+                <a href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA">
+                  YouTube
+                </a>{" "}
+              </p>
               <CardsContainer>
                 {(data.items || []).map((item) => (
-                  <CardItem key={item.guid}>
-                    <a href={item.link} target="_blank" rel="noreferrer">
+                  <CardItem key={item.id.videoId}>
+                    <a
+                      href={`http://www.youtube.com/watch?v=${item.id.videoId}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Card>
+                        <div style={{ height: "200px" }}>
+                          <CardImage
+                            src={item.snippet.thumbnails.high.url}
+                          />
+                        </div>
                         <CardContent>
                           <p
                             style={{
@@ -63,7 +76,7 @@ const PodcastPage = () => {
                           >
                             {new Intl.DateTimeFormat("pt-BR", {
                               dateStyle: "medium",
-                            }).format(new Date(item.pubDate))}
+                            }).format(new Date(item.snippet.publishedAt))}
                           </p>
                           <h4
                             style={{
@@ -73,10 +86,15 @@ const PodcastPage = () => {
                               overflow: "hidden",
                             }}
                           >
-                            {item.title}
+                            {item.snippet.title}
                           </h4>
-                          <p style={{ color: theme.color.accent }}>
-                            {getTime(item.enclosure.duration)}
+                          <p
+                            style={{
+                              marginBottom: "8px",
+                              color: theme.color.accent,
+                            }}
+                          >
+                            {item.snippet.description}
                           </p>
                         </CardContent>
                       </Card>
@@ -87,22 +105,22 @@ const PodcastPage = () => {
             </>
           )}
           <SecondaryButton
-            href={data.feed.link}
+            href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA"
             rel="noreferrer"
             target="_blank"
           >
-            Ver mais episódios
+            Ver mais vídeos
           </SecondaryButton>
         </Container>
-      </PodcastWrapper>
+      </YoutubeWrapper>
       <Footer />
     </Layout>
   )
 }
 
-export default PodcastPage
+export default YoutubePage
 
-const PodcastWrapper = styled.div`
+const YoutubeWrapper = styled.div`
   padding: 160px 0 80px 0;
   position: relative;
   margin: 0;

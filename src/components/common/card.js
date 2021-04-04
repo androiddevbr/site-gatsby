@@ -24,8 +24,8 @@ export const CardItem = styled.li`
 
 export const Card = styled.div`
   background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 10px 8px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  // box-shadow: 0 10px 8px -8px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;

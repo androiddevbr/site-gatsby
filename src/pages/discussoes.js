@@ -11,12 +11,13 @@ import { Container } from "../components/global"
 import { updateLinks } from "../utils"
 import Footer from "../components/sections/footer"
 import { graphql, StaticQuery } from "gatsby"
+import { SecondaryButton } from "../components/common/button"
 
 const ContributePage = () => (
   <StaticQuery
     query={graphql`
       {
-        githubRepository(id: { eq: "__github__repository__2" }) {
+        githubRepository(id: { eq: "__github__repository__5" }) {
           name
           object {
             text
@@ -27,7 +28,7 @@ const ContributePage = () => (
     `}
     render={({ githubRepository }) => (
       <Layout>
-        <SEO title="Materiais de Estudo" />
+        <SEO title="Discussões" />
         <Navigation />
         <ContributeWrapper>
           <Container>
@@ -39,6 +40,12 @@ const ContributePage = () => (
               )}
               allowDangerousHtml
             />
+            <SecondaryButton
+              target="_blank"
+              href="https://github.com/androiddevbr/discussoes/discussions"
+            >
+              Partecipar de Discussões
+            </SecondaryButton>
           </Container>
         </ContributeWrapper>
         <Footer />

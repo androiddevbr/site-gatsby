@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: `https://androiddevbr.us17.list-manage.com/subscribe/post?u=fca2e57107180ec967ad9b6cb&amp;id=1b10013da7`, // string; add your MC list endpoint here; see instructions below
+        endpoint: `${process.env.GATSBY_MAILCHIMP_URL}`, // string; add your MC list endpoint here; see instructions below
         timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
     },
@@ -109,6 +109,18 @@ module.exports = {
             repository(owner: "androiddevbr", name: "sugestoes-temas") {
               name
               object(expression: "master:README.md") {
+                ... on Blob {
+                  text
+                }
+              }
+            }
+          }
+          `,
+          `
+          {
+            repository(owner: "androiddevbr", name: "discussoes") {
+              name
+              object(expression: "main:README.md") {
                 ... on Blob {
                   text
                 }

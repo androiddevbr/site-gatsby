@@ -73,14 +73,41 @@ const Footer = () => (
     <BrandContainer>
       <Logo>Android Dev BR</Logo>
       <FooterCredit>
-        Ícones por{" "}
-        <a href="https://fontawesome.com/" rel="noreferrer" target="_blank">
-          FontAwesome
-        </a>{" "}
-        <br /> Illustrações por{" "}
-        <a href="https://storyset.com/mobile" rel="noreferrer" target="_blank">
-          Freepik Storyset
-        </a>{" "}
+        <p>
+          Ícones por{" "}
+          <a href="https://fontawesome.com/" rel="noreferrer" target="_blank">
+            FontAwesome
+          </a>
+        </p>
+        <p>
+          Illustrações por{" "}
+          <a
+            href="https://storyset.com/mobile"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Freepik Storyset
+          </a>
+        </p>
+        <p>
+          A imagem do Android foi criada pelo{" "}
+          <a
+            href="https://source.android.com/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Android Open Source Project
+          </a>{" "}
+          e foi usada de acordo com os termos da Licença{" "}
+          <a
+            href="https://creativecommons.org/licenses/by/2.5/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Creative Commons 2.5
+          </a>
+          .
+        </p>
       </FooterCredit>
     </BrandContainer>
   </FooterWrapper>
@@ -160,6 +187,11 @@ const FooterIcon = styled.li`
 const FooterCredit = styled.span`
   margin-top: 12px;
   text-align: end;
+
+  > p {
+    ${(props) => props.theme.font_size.xxxsmall}
+    margin: 8px 0 0;
+  }
 `
 
 export default Footer
