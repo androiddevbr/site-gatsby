@@ -1,8 +1,10 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Android Dev BR`,
-    description: `A simple one page marketing starter for saas companies.`,
-    author: `Keegan Burkett`,
+    description: `Uma comunidade de desenvolvimento Android para falantes de português.`,
+    author: `Android Dev BR`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -51,7 +53,7 @@ module.exports = {
       resolve: "gatsby-source-github",
       options: {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN || ''}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
         },
         queries: [
           `
