@@ -53,6 +53,27 @@ const Features = () => (
             Android. Para todos os níveis.
           </FeatureText>
         </FeatureItem>
+        <FeatureItem>
+          <FeatureTitle>Youtube</FeatureTitle>
+          <FeatureText>
+            Diversos <Link to="/videos">vídeos</Link> com muitos conteúdos do
+            universo Android, no formato de live, meetup, etc.
+          </FeatureText>
+        </FeatureItem>
+        <FeatureItem>
+          <FeatureTitle>Panorama</FeatureTitle>
+          <FeatureText>
+            Pesquisa anual feita com os membros da comunidade para entender o{" "}
+            <a
+              href="http://panorama.androiddevbr.org/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              panorama
+            </a>{" "}
+            do mercado Android no Brasil e no exterior.
+          </FeatureText>
+        </FeatureItem>
       </FeaturesGrid>
     </StyledContainer>
   </Section>

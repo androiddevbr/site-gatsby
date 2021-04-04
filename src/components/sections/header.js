@@ -2,8 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { faSlack } from "@fortawesome/free-brands-svg-icons"
 
 import { Container } from "../global"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -39,7 +41,7 @@ const Header = () => {
                 rel="noreferrer"
                 style={{ color: "white", textDecoration: "none" }}
               >
-                Entrar no Slack
+                <FontAwesomeIcon icon={faSlack} /> Entrar no Slack
               </a>
             </HeaderButton>
           </HeaderTextGroup>

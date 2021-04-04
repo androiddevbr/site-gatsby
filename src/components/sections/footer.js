@@ -9,7 +9,11 @@ import {
   faGithub,
   faTwitter,
   faTelegram,
+  faYoutube,
+  faSlack,
+  faMedium
 } from "@fortawesome/free-brands-svg-icons"
+import { faPodcast } from "@fortawesome/free-solid-svg-icons"
 
 import { Container } from "../global"
 
@@ -33,13 +37,24 @@ const Footer = () => (
             <Link to="/codigo-de-conduta">Código de Conduta</Link>
           </li>
         </ul>
+        <ul>
+          <li>
+            <a
+              href="http://panorama.androiddevbr.org/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Panorama
+            </a>
+          </li>
+        </ul>
       </FooterColumn>
       <FooterColumn>
         <span>Acompanhe nas redes</span>
         <ul>
           <FooterIcon>
-            <a href="https://www.linkedin.com/company/android-dev-br">
-              <FontAwesomeIcon icon={faLinkedin} size={"2x"} />
+            <a href="https://twitter.com/AndroidDevBROrg">
+              <FontAwesomeIcon icon={faTwitter} size={"2x"} />
             </a>
           </FooterIcon>
           <FooterIcon>
@@ -48,23 +63,43 @@ const Footer = () => (
             </a>
           </FooterIcon>
           <FooterIcon>
+            <a href="https://www.linkedin.com/company/android-dev-br">
+              <FontAwesomeIcon icon={faLinkedin} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
             <a href="https://www.facebook.com/AndroidDevBrOrg/">
               <FontAwesomeIcon icon={faFacebook} size={"2x"} />
             </a>
           </FooterIcon>
           <FooterIcon>
-            <a href="https://twitter.com/AndroidDevBROrg">
-              <FontAwesomeIcon icon={faTwitter} size={"2x"} />
+            <a href="https://github.com/androiddevbr">
+              <FontAwesomeIcon icon={faGithub} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://www.youtube.com/channel/UC3UIetA7QQJNyt25BXcUALA">
+              <FontAwesomeIcon icon={faYoutube} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="http://slack.androiddevbr.org/">
+              <FontAwesomeIcon icon={faSlack} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://medium.com/android-dev-br">
+              <FontAwesomeIcon icon={faMedium} size={"2x"} />
+            </a>
+          </FooterIcon>
+          <FooterIcon>
+            <a href="https://anchor.fm/androiddevbr">
+              <FontAwesomeIcon icon={faPodcast} size={"2x"} />
             </a>
           </FooterIcon>
           <FooterIcon>
             <a href="https://t.me/androiddevbr">
               <FontAwesomeIcon icon={faTelegram} size={"2x"} />
-            </a>
-          </FooterIcon>
-          <FooterIcon>
-            <a href="https://github.com/androiddevbr">
-              <FontAwesomeIcon icon={faGithub} size={"2x"} />
             </a>
           </FooterIcon>
         </ul>
