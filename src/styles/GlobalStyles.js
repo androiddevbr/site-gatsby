@@ -80,6 +80,10 @@ const GlobalStyles = createGlobalStyle`
     p {
       ${(props) => props.theme.font_size.small};
     }
+
+    .popup-content {
+      width: 90%;
+    }
   }
 
   @media (max-width: ${(props) => props.theme.screen.xs}) {
@@ -119,6 +123,12 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     text-decoration: none;
     color: ${(props) => props.theme.color.secondary}
+  }
+
+  .popup-content {
+    border-radius: 0.5rem;
+    border: none;
+    padding: 36px 36px;
   }
 
 `

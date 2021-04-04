@@ -15,6 +15,7 @@ import {
 import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import Modal from "../modal"
 
 export default class Navigation extends Component {
   state = {
@@ -122,6 +123,7 @@ export default class Navigation extends Component {
                 </MobileMenu>
               )}
             </Mobile>
+            <Modal />
           </Nav>
         )}
       />
