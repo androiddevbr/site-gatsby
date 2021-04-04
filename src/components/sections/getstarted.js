@@ -25,16 +25,18 @@ const GetStarted = () => {
     <StyledSection>
       <GetStartedContainer>
         <GetStartedTitle>Assine a nossa Newsletter!</GetStartedTitle>
-        <NewsletterForm onSubmit={handleSubmit} netlify>
+        <NewsletterForm onSubmit={handleSubmit} data-netlify="true">
           <NewsletterInput
             required
             placeholder="Nome"
+            name="name"
             type="text"
             onChange={(e) => setName(e.target.value)}
           />
           <NewsletterInput
             required
             placeholder="E-mail"
+            name="email"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
