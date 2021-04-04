@@ -4,12 +4,12 @@ export const updateLinks = (
   url = `https://github.com/androiddevbr`
 ) => {
   const regex = /\]\(([^)]+)\)/gsu
-  return String(text).replaceAll(regex, (substring) => {
+  return String(text).replace(regex, (substring) => {
     if (substring.indexOf("http") > 0) return substring
     else if (substring.indexOf("#") > 0)
-      return `](${url}/${name}/${substring.replaceAll(/[\]()]/g, "")})`
+      return `](${url}/${name}/${substring.replace(/[\]()]/g, "")})`
     else
-      return `](${url}/${name}/blob/master/${substring.replaceAll(
+      return `](${url}/${name}/blob/master/${substring.replace(
         /[\]()]/g,
         ""
       )})`
